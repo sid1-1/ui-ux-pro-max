@@ -92,9 +92,6 @@
     z-index:-3;
   }
   @keyframes spin{ to{ transform:rotate(360deg); } }
-  .eclipse--xl{ width:380px; height:380px; }
-  .eclipse--lg{ width:280px; height:280px; }
-  .eclipse--md{ width:64px; height:64px; }
   .eclipse--sm{ width:44px; height:44px; }
   .eclipse--sm::before{ filter:blur(3px); }
   .eclipse--xs{ width:40px; height:40px; }
@@ -102,14 +99,26 @@
   .eclipse--foot{ width:28px; height:28px; }
   .eclipse--foot::before{ filter:blur(2px); }
 
-  /* ---------- Book cover (pure CSS) ---------- */
-  .book-cover{
-    background: linear-gradient(155deg,#0d0b08 0%, #060504 60%);
-    border:1px solid rgba(214,163,74,.35);
-    box-shadow: 18px 24px 55px -12px rgba(0,0,0,.8), 0 0 0 1px rgba(0,0,0,.4);
-    aspect-ratio:2/3; border-radius:2px; padding:16px;
-    display:flex; flex-direction:column; justify-content:space-between;
-    transform:rotateY(-14deg) rotateZ(1deg);
+  /* ---------- Photo assets ---------- */
+  .hero-photo{
+    width:560px; max-width:88vw; height:auto;
+    -webkit-mask-image: radial-gradient(closest-side, #000 68%, transparent 100%);
+    mask-image: radial-gradient(closest-side, #000 68%, transparent 100%);
+    filter: drop-shadow(0 0 70px rgba(255,180,60,.3));
+  }
+  .book-photo-frame{
+    width:220px;
+    transform: rotateY(-10deg) rotateZ(1deg);
+    filter: drop-shadow(14px 22px 34px rgba(0,0,0,.75)) drop-shadow(0 0 26px rgba(255,180,60,.22));
+  }
+  .book-photo-frame img{
+    width:100%; height:auto; display:block; border-radius:2px;
+    -webkit-mask-image: radial-gradient(closest-side, #000 80%, transparent 100%);
+    mask-image: radial-gradient(closest-side, #000 80%, transparent 100%);
+  }
+  .community-thumb{
+    width:64px; height:64px; border-radius:50%; object-fit:cover; flex-shrink:0;
+    box-shadow: 0 0 0 1px rgba(214,163,74,.4), 0 0 26px rgba(255,180,60,.45);
   }
 
   /* ---------- Shared bits ---------- */
@@ -196,13 +205,7 @@
   .hero-copy .hairline{ width:56px; margin-top:28px; margin-bottom:0; }
 
   .hero-art{ position:relative; display:flex; justify-content:center; align-items:center; padding:40px 0; }
-  .floating-book{ position:absolute; right:0; bottom:8px; width:140px; }
-  .book-icon{ margin:8px auto 0; }
-  .book-text{ text-align:center; }
-  .book-kicker{ font-size:.5rem; letter-spacing:.2em; color:rgba(214,163,74,.8); margin-bottom:8px; }
-  .book-title{ font-size:1.3rem; line-height:1; }
-  .book-sub{ font-size:.4rem; letter-spacing:.15em; color:rgba(242,234,217,.7); margin-top:8px; }
-  .book-author{ font-size:.45rem; letter-spacing:.1em; margin-top:8px; }
+  .floating-book{ position:absolute; right:2%; bottom:2%; }
 
   .hero-feature .kicker{ font-size:.68rem; letter-spacing:.25em; color:var(--gold); margin-bottom:12px; }
   .hero-feature h2{ font-size:1.9rem; line-height:1.15; }
@@ -360,17 +363,11 @@
     </div>
 
     <div class="reveal hero-art" style="transition-delay:.15s">
-      <div class="eclipse eclipse--lg"><div class="corona"></div></div>
+      <img src="assets/eclipse-hero.png" alt="A total solar eclipse glowing gold above silhouetted mountains and still water" class="hero-photo" />
 
       <div class="floating-book" style="perspective:900px;">
-        <div class="book-cover">
-          <div class="eclipse eclipse--xs book-icon"><div class="corona"></div></div>
-          <div class="book-text">
-            <div class="book-kicker">A TALE OF THE TOASTIE REVOLUTION</div>
-            <div class="serif gold book-title">QUIET<br/>WINS</div>
-            <div class="book-sub">THE STORM AND THE STATUE</div>
-            <div class="serif bone book-author">DIANA MCKAY</div>
-          </div>
+        <div class="book-photo-frame">
+          <img src="assets/book-cover-quiet-wins.png" alt="Quiet Wins: The Storm and the Statue, a novel by Diana McKay — book cover" />
         </div>
       </div>
     </div>
@@ -432,7 +429,7 @@
   <div class="wrap community-grid">
 
     <div class="reveal community-card">
-      <div class="eclipse eclipse--md"><div class="corona"></div></div>
+      <img src="assets/eclipse-hero.png" alt="" class="community-thumb" />
       <div>
         <h3 class="serif bone">Join our community</h3>
         <p>Be part of a global space for storytelling, creativity and culture.</p>
