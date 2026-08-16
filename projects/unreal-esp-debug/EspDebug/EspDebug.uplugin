@@ -1,0 +1,24 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "ESP Debug Overlay",
+	"Description": "Development-only on-screen tracking overlay for your own actors: bounding boxes, health bars, labels, occlusion tinting, skeleton lines, off-screen arrows, radar and CSV session recording. Compiled out of Shipping builds.",
+	"Category": "Debugging",
+	"CreatedBy": "",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": false,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "EspDebug",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}
